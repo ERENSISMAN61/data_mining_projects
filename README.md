@@ -26,13 +26,15 @@ Code Explanation
   - palmerpenguins to load the dataset.
 
 2. Data Loading and Preprocessing
-![image](https://github.com/user-attachments/assets/e9ad7f89-f044-4277-9db1-17154fc147e6)
+![image](https://github.com/user-attachments/assets/7bb3ea37-17c1-4ff7-8da6-30521028cd58)
+
 
  
 
 - Data Loading:
   - The dataset is loaded using `load_penguins()` and displayed using `head()` to examine its structure.
- ![image](https://github.com/user-attachments/assets/05a384c7-0146-44b5-bfa9-7fef8bdbe5ec)
+![image](https://github.com/user-attachments/assets/d6e87b17-43a6-44f7-957e-6d884043d0a5)
+
 
 
 - Preprocessing:
@@ -43,7 +45,8 @@ Code Explanation
   - Encoding categorical variables:
     - `sex` is converted to dummy variables.
     - The target variable `species` is mapped to numerical values.
-![image](https://github.com/user-attachments/assets/be19d2a3-b532-476f-8ef6-4998963178e5)
+![image](https://github.com/user-attachments/assets/5d3be163-3352-49de-8cce-0f7f577dafe6)
+
 
  
 
@@ -53,7 +56,8 @@ Code Explanation
 
 3. Model Training
 
- ![image](https://github.com/user-attachments/assets/81e44c47-d454-4f62-8925-3832d0ec72b7)
+![image](https://github.com/user-attachments/assets/0ebd145a-da17-47f7-9a9c-43b2e8ce681a)
+
 
 
 - Decision Tree:
@@ -64,7 +68,8 @@ Code Explanation
   - Second Training: Optimized hyperparameters were applied (n_estimators=200, max_depth=10).
 
 4. Model Evaluation
-![image](https://github.com/user-attachments/assets/2be788fe-3233-4f30-81f0-65f7a065ade7)
+![image](https://github.com/user-attachments/assets/d59aa523-9537-4a9b-8386-9dafe1db9198)
+
 
  
 
@@ -75,7 +80,8 @@ Code Explanation
   - F1 Score
   - Classification Report
 5. Visualization
-![image](https://github.com/user-attachments/assets/b035c30c-24ae-4c71-ab7c-1a6cab15244e)
+![image](https://github.com/user-attachments/assets/4bcdee3a-927f-4b7e-bfb0-58d38ffe35e6)
+
 
  
 
@@ -96,8 +102,9 @@ Performance Metrics:
 2.  Random Forest:
 •	In the first training, the random forest model had intentionally limited capacity due to the hyperparameter settings (n_estimators=5 and max_depth=3). This led to underfitting, with lower accuracy and weaker overall performance.
 •	In the second training, increasing the number of estimators (n_estimators=200) and depth (max_depth=10) allowed the random forest to model the data more effectively. This resulted in a significant performance boost, matching the near-optimal behavior expected from a robust ensemble model.
-  ![image](https://github.com/user-attachments/assets/6c1cdad1-1b53-445d-9d96-d0d432dfe533)
-![image](https://github.com/user-attachments/assets/27cd359a-ee90-4a5f-add7-a55b5f3927cd)
+![image](https://github.com/user-attachments/assets/e501cb3f-320e-4466-afba-98fda0492006)
+![image](https://github.com/user-attachments/assets/8def8dc6-b0c5-4700-9e8c-ac22c69f318e)
+
 
 
 Confusion Matrices:
@@ -112,20 +119,23 @@ o	The second training phase reduced these errors significantly, resulting in hig
 
 
 1. Decision Tree - First Training
- 
+ ![image](https://github.com/user-attachments/assets/9e867cc3-e3b3-4023-9fa5-a9ebfbaa76a8)
+
 
 2. Random Forest - First Training
+![image](https://github.com/user-attachments/assets/4b551a11-bf62-4884-884a-9f5b4ba0b6a3)
 
  
 
 
 3. Decision Tree - Second Training
+![image](https://github.com/user-attachments/assets/ad967963-7869-434b-a007-b82d12000237)
 
  
 
 4. Random Forest - Second Training
+ ![image](https://github.com/user-attachments/assets/6c84a2b8-ebf9-494c-b315-eba45b63bc16)
 
- 
 
 
 
@@ -155,6 +165,7 @@ Dataset Details:
 
 
 Code Explanation
+![image](https://github.com/user-attachments/assets/60da3eb1-ca9d-487d-a177-54566eed17e2)
 
  
 Step-by-Step Explanation:
@@ -194,11 +205,14 @@ Visualizations
 3. 2nd Test Clustering: The second test, using `k=3`, produced more meaningful and well-separated clusters, clearly differentiating between the penguin species.
 
 1st Test Clustering:
- 
+ ![image](https://github.com/user-attachments/assets/8e41c7de-f739-4a7c-9feb-48171cadb836)
+
 Elbow Method Visualization:
- 
+ ![image](https://github.com/user-attachments/assets/87307e70-7299-4b75-85e1-9cc19cf96a6c)
+
 2nd Test Clustering:
- 
+ ![image](https://github.com/user-attachments/assets/604d62b8-de5f-415f-ae73-2e26bb7c036a)
+
 
 
 
@@ -210,7 +224,9 @@ Question 3
 Dataset Selection and Overview
 
 This report section covers the analysis of the Palmer Penguins dataset, where the goal is to predict the body mass of penguins using various regression techniques: Linear Regression, Ridge Regression, Lasso Regression, and Random Forest Regression. The models' performances are evaluated using metrics such as Mean Squared Error (MSE) and R².
-Code Expla	nation
+
+Code Explanation
+![image](https://github.com/user-attachments/assets/d3dc61a3-6bf3-43f6-8eed-dc9b8f5a00ef)
 
  
 1.  Library Imports:
@@ -229,7 +245,8 @@ o	Test 1: The test size is set to 50%, which means half of the data is used for 
 o	Test 2: The test size is set to 20%, providing a larger training set, allowing the model to learn better patterns and improving the overall model performance.
 6.  Feature Scaling:
 •	Standardization: The features are standardized using StandardScaler(), which scales the features to have a mean of 0 and a standard deviation of 1. This helps the models to converge faster and perform better, especially for algorithms like Ridge and Lasso that are sensitive to the scale of the features.
- 
+ ![image](https://github.com/user-attachments/assets/0e301e0f-ceef-4560-a966-1a8a5fcea44c)
+
 7.  Model Training for Test 1:
 •	Linear Regression: A basic linear regression model is trained without any regularization.
 •	Ridge Regression: Ridge regression is applied with a higher regularization strength (alpha=10) to prevent overfitting.
@@ -247,7 +264,8 @@ o	Test 2: The test size is set to 20%, providing a larger training set, allowing
 •	Mean Squared Error (MSE) and R² (Coefficient of Determination) are calculated for each model to evaluate the model's performance:
 o	MSE measures the average squared difference between actual and predicted values. Lower MSE indicates a better fit.
 o	R² indicates the proportion of variance in the target variable explained by the model. Higher R² is better, with values closer to 1 indicating a good fit.
- 
+ ![image](https://github.com/user-attachments/assets/5651893a-1c7b-4083-86da-d2a7fa8f7582)
+
 10. Visualization:
 •	Scatter plots are generated to compare the actual vs predicted values for each model in both Test 1 and Test 2.
 o	These plots help to visualize how closely the predicted values align with the actual values, with a better-fitting model showing points close to the line y=x.
@@ -260,10 +278,12 @@ The following models were used to predict the body mass of penguins:
 Results
 
 Test 1:
- 
+ ![image](https://github.com/user-attachments/assets/b4873c8e-72d0-459c-8aa1-c437b0f817a5)
+
 
 Test 2 (with optimized performance settings):
- 
+ ![image](https://github.com/user-attachments/assets/8222a80c-7fb3-43c8-98a1-b0906114fe85)
+
 	Linear Regression: In Test 2, Linear Regression showed a slight improvement in performance with a lower MSE and higher R², indicating a better fit and prediction accuracy compared to Test 1.
 	Ridge Regression: Ridge regression performed similarly to Linear Regression in both tests, but with Test 2 showing a slight improvement, particularly in MSE, due to reduced regularization (α=0.1).
 	Lasso Regression: Lasso Regression's performance was almost identical to Linear and Ridge in both tests, with a marginal improvement in Test 2 due to reduced regularization (α=0.01), improving MSE.
@@ -272,8 +292,10 @@ Test 2 (with optimized performance settings):
 Visualizations
 1st Test:
 The following plots show the actual vs predicted values for each model in Test 1.
- 
+ ![image](https://github.com/user-attachments/assets/ee2bd36d-bb24-4717-be0a-6048bf47fb0c)
+
 2nd Test:
 The following plots show the actual vs predicted values for each model in Test 2.
- 
+ ![image](https://github.com/user-attachments/assets/cddde2fb-1b73-4f96-a50a-560f200d0baa)
+
 In Test 2, by optimizing the hyperparameters and adjusting the test size, we were able to improve the model's performance. The use of more suitable hyperparameters allowed the models to better capture the underlying patterns in the data, resulting in more accurate predictions and a better overall fit compared to Test 1.
