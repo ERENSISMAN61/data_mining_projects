@@ -1,4 +1,4 @@
-#Data Mining Projects
+# Data Mining Projects
 
 Eren ŞİŞMAN - 201401021
 
