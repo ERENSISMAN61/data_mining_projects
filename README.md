@@ -4,7 +4,7 @@ Author: Eren ŞİŞMAN
 
 ## Project 1
 
-Dataset Selection and Overview
+### Dataset Selection and Overview
 
 For this assignment, the Palmer Penguins dataset was selected. This dataset is publicly available and designed to classify penguin species (Adelie, Chinstrap, and Gentoo) based on physical measurements and categorical variables. It is well-suited for classification tasks.
 
@@ -24,7 +24,7 @@ The Palmer Penguins dataset was chosen because:
 The Goal
 The goal of this task is to classify penguin species based on physical measurements and demographic features using Decision Tree and Random Forest models. By evaluating and comparing these models, we aim to understand how feature interactions and hyperparameter tuning impact classification accuracy and overall performance.
 
-Code Explanation
+### Code Explanation
 
 1. Necessary Libraries
 
@@ -121,7 +121,7 @@ The second training phase reduced these errors significantly, resulting in high 
 
 ## Project 2
 
-Dataset Selection and Overview
+### Dataset Selection and Overview
 
 For this task, we use the mpg dataset (from the ggplot2 package in R), which contains fuel economy data for cars. This dataset is a great choice because it provides continuous numerical values for various attributes like engine displacement, highway mileage, and number of cylinders, which can be used for clustering purposes. The goal of this exercise is to use K-Means clustering to group the data based on the engine displacement (displ) and highway miles per gallon (hwy) features, aiming to predict the cylinder type (cyl).
 
@@ -139,7 +139,7 @@ We use K-Means clustering to explore the natural groupings within the dataset.
 
 We chose this dataset because it provides numerical features related to car performance (displacement and highway MPG), and the target variable (cylinder type) is a categorical variable, making it a suitable candidate for clustering tasks.
 
-Code Explanation
+### Code Explanation
 
 1. Importing the Libraries:
 
@@ -211,7 +211,7 @@ Test 2: Using K=3 (Optimized Hyperparameters)
 
 Silhouette Score: The Silhouette score for k=3 was 0.47, which is an improvement over the first test. However, the score is still relatively moderate, indicating that there is some overlap in the data clusters, but they are better separated than in Test 1.
 
-Visualizations
+### Visualizations
 
 1st Test Clustering:
 ![image](https://github.com/user-attachments/assets/3f1dc2e7-b0cc-41fd-b77b-917b5e327627)
@@ -230,7 +230,7 @@ Elbow Method Visualization:
 
 ## Project 3
 
-## Dataset Selection and Overview
+### Dataset Selection and Overview
 
 For this question, we use the diamonds dataset (from the seaborn library in Python), which contains detailed information about diamonds, including various numerical and categorical attributes. This dataset is an excellent choice because it provides a continuous numerical target variable (price) and other features that can be used to predict diamond prices through regression models.
 
@@ -255,7 +255,7 @@ We selected this dataset for the following reasons:
 - Complexity and Diversity: The combination of physical dimensions, quality grades, and numerical measurements makes this dataset challenging and engaging for model development and analysis.
 The primary objective is to predict the price of diamonds using regression techniques and compare the performance of different models (Linear Regression, Ridge, Lasso, and Random Forest).
 
-Code Explanation
+### Code Explanation
 
 1.  Library Imports:
  
@@ -347,7 +347,7 @@ Code Explanation
 - Points closer to the diagonal line (x=y) indicate better predictions.
 
 
-## Results
+### Results
 
 Test 1:
  ![image](https://github.com/user-attachments/assets/3344063f-e54b-435d-85d9-a129f029dca5)
@@ -364,7 +364,7 @@ Lasso Regression performed similarly to Ridge and Linear Regression, with minor 
 -  Random Forest Regression:
 Random Forest achieved the most significant improvement in Test 2, delivering the lowest MSE and highest R² among all models. This improvement was due to hyperparameter optimization (n_estimators=200, max_depth=20), which allowed it to better capture complex non-linear relationships and interactions between features. It significantly outperformed all linear models in both tests.
 
-## Visualizations
+### Visualizations
 1st Test:
 The following plots show the actual vs predicted values for each model in Test 1.
  ![image](https://github.com/user-attachments/assets/913d996c-d62d-4f61-8bfb-0b454ac28777)
