@@ -13,6 +13,17 @@ Dataset Features:
 - Target Variable: species (Adelie, Chinstrap, Gentoo).
 The task involves applying a decision tree classifier, comparing it with a random forest classifier, and evaluating their performance with accuracy, precision, recall, and F1 score.
 
+Why This Dataset?
+The Palmer Penguins dataset was chosen because:
+1.	Multi-Class Problem: It has three species (Adelie, Chinstrap, Gentoo), ideal for classification tasks.
+2.	Feature Variety: Includes both numerical (e.g., bill_length_mm, body_mass_g) and categorical features (sex).
+3.	Balanced Classes: Species are well-distributed, preventing bias in model performance.
+4.	Real-World Relevance: Features like bill dimensions and body mass are meaningful in ecological studies.
+5.	Manageable Size: Small and easy to preprocess, making it ideal for quick analysis.
+
+The Goal
+The goal of this task is to classify penguin species based on physical measurements and demographic features using Decision Tree and Random Forest models. By evaluating and comparing these models, we aim to understand how feature interactions and hyperparameter tuning impact classification accuracy and overall performance.
+
 Code Explanation
 
 1. Necessary Libraries
