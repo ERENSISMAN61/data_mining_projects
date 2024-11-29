@@ -1,8 +1,8 @@
-RTEU Computer Engineering - Data Mining Homework
+#Data Mining Projects
 
 Eren ŞİŞMAN - 201401021
 
-Question 1
+## Project 1
 
 Dataset Selection and Overview
 
@@ -63,7 +63,7 @@ Code Explanation
 
 The confusion matrix provides a clear visualization of model predictions versus actual labels.
 
-Results
+### Results
 
 Performance Metrics:
 
@@ -78,6 +78,9 @@ In the second training, hyperparameter optimization ( limiting the depth of the 
 In the first training, the random forest model had intentionally limited capacity due to the hyperparameter settings (n_estimators=5 and max_depth=3). This led to underfitting, with lower accuracy and weaker overall performance.
 
 In the second training, increasing the number of estimators (n_estimators=200) and depth (max_depth=10) allowed the random forest to model the data more effectively. This resulted in a significant performance boost, matching the near-optimal behavior expected from a robust ensemble model.
+
+![image](https://github.com/user-attachments/assets/89d7bdf2-187a-4a52-879b-6c5413397ee8)
+![image](https://github.com/user-attachments/assets/08cabacf-db89-4ae2-8737-e9375253f799)
 
 Confusion Matrices:
 
@@ -94,14 +97,18 @@ The first training phase showed more pronounced misclassifications due to the si
 The second training phase reduced these errors significantly, resulting in high precision, recall, and F1 scores.
 
 1. Decision Tree - First Training
+![image](https://github.com/user-attachments/assets/e68db930-7b6e-4257-a8c5-395bac196996)
 
 2. Random Forest - First Training
+![image](https://github.com/user-attachments/assets/3cea142c-09d1-40e3-8cb6-0d2376edc1e7)
 
 3. Decision Tree - Second Training
+![image](https://github.com/user-attachments/assets/e1bf74f7-b0f2-4a5d-9204-6102f5f3e8bc)
 
 4. Random Forest - Second Training
+![image](https://github.com/user-attachments/assets/8e311ab3-338c-4e71-ba0a-86241f7a32ba)
 
-Question 2
+## Project 2
 
 Dataset Selection and Overview
 
@@ -181,7 +188,9 @@ The data is standardized using StandardScaler, which centers the data around 0 a
 
 -  Visualization: The clusters are visualized in a scatter plot, with data points colored based on their predicted clusters. The plot uses Engine Displacement (displ) on the x-axis and Highway MPG (hwy) on the y-axis, showing how the points are now grouped into three clusters.
 
-Results
+### Results
+
+![image](https://github.com/user-attachments/assets/d2857490-6886-40d0-b967-8c004666326c)
 
 Test 1: Using K=2
 
@@ -194,10 +203,13 @@ Silhouette Score: The Silhouette score for k=3 was 0.47, which is an improvement
 Visualizations
 
 1st Test Clustering:
+![image](https://github.com/user-attachments/assets/3f1dc2e7-b0cc-41fd-b77b-917b5e327627)
 
 Elbow Method Visualization:
+![image](https://github.com/user-attachments/assets/701ee4a8-364a-4892-8527-529318639c06)
 
 2nd Test Clustering:
+![image](https://github.com/user-attachments/assets/d2c13221-1a73-4da6-918f-b6bf6c675b83)
 
 - 1st K-Means Clustering (k=2): The first plot shows that the points are divided into two clusters, but the clustering is not meaningful as the dataset should ideally have three distinct clusters.
 
@@ -205,7 +217,7 @@ Elbow Method Visualization:
 
 - 2nd K-Means Clustering (k=3): In the second plot, the data is clustered into three groups, representing the three cylinder types (4, 6, and 8). The separation between the clusters is clearer and more meaningful.
 
-Question 3
+## Project 3
 
 Dataset Selection and Overview
 
@@ -293,11 +305,13 @@ The following models were used to predict the body mass of penguins:
 
 4. Random Forest Regression: A non-linear model that aggregates multiple decision trees to make predictions.
 
-Results
+### Results
 
 Test 1:
+![image](https://github.com/user-attachments/assets/f0846afd-1648-4f7f-82a7-6a49b72834a4)
 
 Test 2 (with optimized performance settings):
+![image](https://github.com/user-attachments/assets/4159c459-4da6-4810-b2e8-df32f2a50c92)
 
 Linear Regression: In Test 2, Linear Regression showed a slight improvement in performance with a lower MSE and higher R², indicating a better fit and prediction accuracy compared to Test 1.
 
@@ -312,9 +326,11 @@ Visualizations
 1st Test:
 
 The following plots show the actual vs predicted values for each model in Test 1.
+![image](https://github.com/user-attachments/assets/04bab685-291f-4bcb-956a-d482021e7c98)
 
 2nd Test:
 
 The following plots show the actual vs predicted values for each model in Test 2.
+![image](https://github.com/user-attachments/assets/9b80bbd7-e1c4-459d-b48a-3d3c56e90237)
 
 In Test 2, by optimizing the hyperparameters and adjusting the test size, we were able to improve the model's performance. The use of more suitable hyperparameters allowed the models to better capture the underlying patterns in the data, resulting in more accurate predictions and a better overall fit compared to Test 1.
