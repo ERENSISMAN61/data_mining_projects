@@ -1,82 +1,80 @@
-# import necessary libraries
 import pandas as pd
 import numpy as np
+from sklearn.model_selection import train_test_split
 from sklearn.cluster import KMeans
-from sklearn.preprocessing import StandardScaler
-from sklearn.impute import SimpleImputer
 from sklearn.metrics import silhouette_score
+from sklearn.preprocessing import StandardScaler
 import seaborn as sns
 import matplotlib.pyplot as plt
-from palmerpenguins import load_penguins
 
-# load the dataset
-penguins = load_penguins()
+# load the mpg dataset
+mpg = pd.read_csv('mpg.csv')
 
-# select numerical features
-penguins = penguins[["bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g"]]
+# data preprocessing
+mpg_selected = mpg[['displ', 'hwy', 'cyl']]
 
-# handle missing values by filling with mean
-imputer = SimpleImputer(strategy="mean")
-penguins = pd.DataFrame(imputer.fit_transform(penguins), columns=penguins.columns)
+# handle missing values by filling with the most frequent value
+mpg_selected = mpg_selected.fillna(mpg_selected.mode().iloc[0])
 
-# scale the features to standardize the dataset
+# split the data into training (70%) and testing (30%) sets
+X_train, X_test, y_train, y_test = train_test_split(mpg_selected[['displ', 'hwy']], mpg_selected['cyl'], test_size=0.3, random_state=42)
+
+# scale the data for clustering (only displ and hwy)
 scaler = StandardScaler()
-penguins_scaled = scaler.fit_transform(penguins)
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
 
-# first test
-kmeans_test1 = KMeans(n_clusters=7, random_state=42)
-clusters_test1 = kmeans_test1.fit_predict(penguins_scaled)  
-silhouette_test1 = silhouette_score(penguins_scaled, clusters_test1)
-print(f"1st test silhouette score: {silhouette_test1:.2f}")
 
-# visualize clusters for the first test
+# 1st test: using K-Means with k=2 
+kmeans_bad = KMeans(n_clusters=2, random_state=42)
+kmeans_bad.fit(X_train_scaled)
+clusters_bad = kmeans_bad.predict(X_test_scaled)
+
+# evaluate clustering using silhouette score
+silhouette_bad = silhouette_score(X_test_scaled, clusters_bad)
+print(f"Silhouette score for K=2: {silhouette_bad:.2f}")
+
+# visualize the clusters for the first test (k=2)
 plt.figure(figsize=(8, 6))
-sns.scatterplot(
-    x=penguins["bill_length_mm"],
-    y=penguins["flipper_length_mm"], 
-    hue=clusters_test1, 
-    palette="Set1", 
-    style=clusters_test1
-)
-plt.title("1st test: clustering")
-plt.xlabel("bill length (mm)")
-plt.ylabel("flipper length (mm)")
-plt.legend(title="cluster")
+sns.scatterplot(x=X_test['displ'], y=X_test['hwy'], hue=clusters_bad, palette='Set1')
+plt.title("K-Means Clustering (k=2) with Cylinder Types")
+plt.xlabel("Engine Displacement (displ)")
+plt.ylabel("Highway MPG (hwy)")
+plt.legend(title="Cylinder Type")
 plt.show()
 
-# second test: using elbow method and all features
+# elbow method for finding the optimal number of clusters (k)
 inertia = []
 k_values = range(1, 11)
 for k in k_values:
     kmeans = KMeans(n_clusters=k, random_state=42)
-    kmeans.fit(penguins_scaled)
+    kmeans.fit(X_train_scaled)
     inertia.append(kmeans.inertia_)
 
-# visualize the elbow method
+# plot the Elbow Method to visualize the optimal k
 plt.figure(figsize=(8, 5))
-plt.plot(k_values, inertia, marker="o")
-plt.title("elbow method: optimal k selection")
-plt.xlabel("number of clusters (k)")
-plt.ylabel("inertia")
+plt.plot(k_values, inertia, marker='o')
+plt.title("Elbow Method for Optimal k")
+plt.xlabel("Number of Clusters (k)")
+plt.ylabel("Inertia")
 plt.show()
 
-# optimal k selected as 3
-kmeans_test2 = KMeans(n_clusters=3, random_state=42)
-clusters_test2 = kmeans_test2.fit_predict(penguins_scaled)
-silhouette_test2 = silhouette_score(penguins_scaled, clusters_test2)
-print(f"2nd test silhouette score: {silhouette_test2:.2f}")
+# based on the elbow plot, we can decide on k=3 as the optimal k.
 
-# visualize clusters for the second test
+# 2nd test: using k-means with k=3 (optimized hyperparameters)
+kmeans_good = KMeans(n_clusters=3, random_state=42)
+kmeans_good.fit(X_train_scaled)
+clusters_good = kmeans_good.predict(X_test_scaled)
+
+# evaluate clustering using silhouette score for the good model
+silhouette_good = silhouette_score(X_test_scaled, clusters_good)
+print(f"Silhouette score for K=3 (optimized hyperparameters): {silhouette_good:.2f}")
+
+# visualize the clusters for the second test (k=3) 
 plt.figure(figsize=(8, 6))
-sns.scatterplot(
-    x=penguins["bill_length_mm"],
-    y=penguins["flipper_length_mm"],
-    hue=clusters_test2,
-    palette="Set2",
-    style=clusters_test2,
-)
-plt.title("2nd test: improved clustering")
-plt.xlabel("bill length (mm)")
-plt.ylabel("flipper length (mm)")
-plt.legend(title="cluster")
+sns.scatterplot(x=X_test['displ'], y=X_test['hwy'], hue=clusters_good, palette='Set2')
+plt.title("K-Means Clustering (k=3) with Cylinder Types (Optimized Hyperparameters)")
+plt.xlabel("Engine Displacement (displ)")
+plt.ylabel("Highway MPG (hwy)")
+plt.legend(title="Cylinder Type")
 plt.show()
