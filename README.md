@@ -1,6 +1,6 @@
 # Data Mining Projects
 
-Eren ŞİŞMAN - 201401021
+Author: Eren ŞİŞMAN
 
 ## Project 1
 
